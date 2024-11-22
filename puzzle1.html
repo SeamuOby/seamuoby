@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Christmas Riddles</h1>
-    <p>Solve the riddles below and combine the answers to form a 16-character passphrase!</p>
+    <p>Solve the riddles below and combine the answers to form a 20-character passphrase!</p>
     <ol>
         <li>I sparkle and shimmer, atop the green. A symbol of hope, often seen.</li>
         <li>I am cold, but I bring such cheer, Made of three balls, I disappear. </li>
@@ -26,7 +26,7 @@
             const userInput = document.getElementById('passphrase').value.toUpperCase();
             const result = document.getElementById('result');
             const nextPuzzle = document.getElementById('nextPuzzle');
-            const correctPassphrase = "STARSNOWSANTASOCK";
+            const correctPassphrase = "STARSNOWSANTASTOCKING";
             if (userInput === correctPassphrase) {
                 result.textContent = "Correct! 🎉";
                 nextPuzzle.classList.remove("hidden");
