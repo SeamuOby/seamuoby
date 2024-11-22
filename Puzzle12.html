@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 11: Dwarf Fortress Holidays</title>
+    <link rel="stylesheet" href="styles.css">
+    </style>
+</head>
+<body>
+    <h1>Puzzle 12: Grandma Got Run Over by a Blamedeer</h1>
+    <p>
+        It was a cold, snowy Christmas Eve when the incident occurred. Grandma was strolling home from the bakery, arms full of freshly baked pies, when suddenly a flash of red and a clatter of hooves sent her pies flying. She tumbled into a snowdrift as the culprit darted off into the night.
+    </p>
+    <p>
+        The other reindeer, along with a suspiciously festive Steve Aoki, gathered to plead their innocence. Grandma discovered two clues at the scene: a tuft of red fur snagged on her scarf and the unmistakable remnants of frosting and sprinkles near the impact zone. The suspects all seemed eager to explain themselves—except for Vixen, whose behavior was… concerning.
+    </p>
+    
+    <div class="suspect">
+        <strong>Dasher:</strong>
+        <p>
+            ‘It wasn’t me!’ Dasher protested. ‘Chris and I were watching a Jurassic World marathon in the North Pole Cinema. And I definitely wasn’t anywhere near Grandma—ask Chris!’ he added, a little too defensively.
+        </p>
+    </div>
+
+    <div class="suspect">
+        <strong>Dancer:</strong>
+        <p>
+            Dancer adjusted a pair of tiny sequined boots and pirouetted dramatically. ‘Hold me closer,’ he murmured, looking wistfully at the falling snow. ‘I’ve been dancing under the headlights for hours, lost in Elton’s melodies. My hooves didn’t even touch the ground tonight.’
+        </p>
+    </div>
+
+    <div class="suspect">
+        <strong>Prancer:</strong>
+        <p>
+            Prancer proudly held up a parade schedule. ‘I was marching through the Christmas parade with the entire village watching. My hooves were practically glittering, and I was in formation the whole time.’ He smirked smugly.
+        </p>
+    </div>
+
+    <div class="suspect">
+        <strong>Vixen:</strong>
+        <p>
+            Vixen stood quietly to the side, adjusting the latch on her suitcase, which bore a sticker reading "Property of the Strategic North Pole Defense Initiative." ‘I’m not saying what I was doing,’ she said cryptically, as the faint hum of a Geiger counter began to echo softly. ‘But trust me, it was… important. And no, I definitely didn’t need to run. My work has global implications.’ She paused to polish the keypad on her suitcase, which flashed a tiny countdown timer for reasons she refused to explain.
+        </p>
+    </div>
+
+    <div class="suspect">
+        <strong>Rudolph:</strong>
+        <p>
+            Rudolph huffed indignantly. ‘If my nose had been anywhere near Grandma, she would’ve seen me coming a mile away. I was guiding Santa’s sleigh on the other side of town.’ His glowing nose flickered angrily.
+        </p>
+    </div>
+
+    <div class="suspect">
+        <strong>Steve Aoki:</strong>
+        <p>
+            Steve grinned and spun a glowing peppermint turntable. ‘Look, I was just commuting to the Christmas rave in the next town over. Sure, I cut through the village, but I was focused on my beats! And maybe I dropped a little cake on the way, but who hasn’t?’ He laughed nervously, brushing icing off his jacket.
+        </p>
+    </div>
+
+    <p>
+        As Grandma mulled over the clues, she considered the frosting and sprinkles, the erratic hoofprints, and the red fur snagged on her scarf. Vixen seemed far too preoccupied with a literal nuclear device to have been involved in a minor collision, but what about Steve?
+    </p>
+
+    <p>Who is guilty? Enter the culprit’s name below:</p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="hidden">🎉 Congratulations! You have completed all the challenges <a href="AI reward.html">Collect your prize</a></div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "steve aoki"; // The correct answer
+            const userInput = document.getElementById('answer').value.toLowerCase().trim();
+            const result = document.getElementById('result');
+
+            if (userInput === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

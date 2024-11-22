@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 8: Gemini More Like GeminUsuck</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 100%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puzzle 8: Gemini More Like GeminUsuck</h1>
+    <p>Match each star sign to the animal or item it represents by typing your answers in the boxes. Once all answers are correct, the next puzzle will be revealed!</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Star Sign</th>
+                <th>Your Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aries</td>
+                <td><input type="text" id="answer1" placeholder="Enter answer"></td>
+            </tr>
+            <tr>
+                <td>Taurus</td>
+                <td><input type="text" id="answer2" placeholder="Enter answer"></td>
+            </tr>
+            <tr>
+                <td>Cancer</td>
+                <td><input type="text" id="answer3" placeholder="Enter answer"></td>
+            </tr>
+            <tr>
+                <td>Leo</td>
+                <td><input type="text" id="answer4" placeholder="Enter answer"></td>
+            </tr>
+            <tr>
+                <td>Scorpio</td>
+                <td><input type="text" id="answer5" placeholder="Enter answer"></td>
+            </tr>
+            <tr>
+                <td>Pisces</td>
+                <td><input type="text" id="answer6" placeholder="Enter answer"></td>
+            </tr>
+            <tr>
+                <td>Nothing</td>
+                <td><input type="text" id="answer7" placeholder="Enter answer"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="checkAnswers()">Submit</button>
+    <div id="result" class="hidden">🎉 Congratulations! <a href="puzzle9.html">Go to the next puzzle</a></div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = [
+                "ram",       // Aries
+                "bull",      // Taurus
+                "crab",      // Cancer
+                "lion",      // Leo
+                "scorpion",  // Scorpio
+                "fish",      // Pisces
+            ];
+
+            const userAnswers = [
+                document.getElementById('answer1').value.toLowerCase().trim(),
+                document.getElementById('answer2').value.toLowerCase().trim(),
+                document.getElementById('answer3').value.toLowerCase().trim(),
+                document.getElementById('answer4').value.toLowerCase().trim(),
+                document.getElementById('answer5').value.toLowerCase().trim(),
+                document.getElementById('answer6').value.toLowerCase().trim(),
+            ];
+
+            const allCorrect = userAnswers.every((answer, index) => answer === correctAnswers[index]);
+
+            const result = document.getElementById('result');
+            if (allCorrect) {
+                result.classList.remove('hidden');
+            } else {
+                alert("One or more answers are incorrect. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

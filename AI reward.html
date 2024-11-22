@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 Labs Conversational AI Agent</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        #agent-container {
+            margin: 40px auto;
+            width: 100%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Me AI</h1>
+    <p>Nice work. I've fed an AI some random thoughts and given it my voice. See if you can have some fun with it. I thought it would be a substitute to me rambling at you at 3AM. I thought this was such a good idea but now I'm deeply concerned that it's weird. Merry Christmas. If the widget isn't working please go to: https://elevenlabs.io/app/talk-to?agent_id=hh68OsOnoUvZvrso6mYI</p>
+    <div class="widget-container"></p>
+
+    <div id="agent-container">
+        <!-- Embedded 11 Labs Agent -->
+        <elevenlabs-convai agent-id="hh68OsOnoUvZvrso6mYI"></elevenlabs-convai>
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    </div>
+</body>
+</html>

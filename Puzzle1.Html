@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Riddles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Christmas Riddles</h1>
+    <p>Solve the riddles below and combine the answers to form a 16-character passphrase!</p>
+    <ol>
+        <li>I sparkle and shimmer, atop the green. A symbol of hope, often seen.</li>
+        <li>I am cold, but I bring such cheer, Made of three balls, I disappear. </li>
+        <li>I bring gifts and laughter, a jolly sight. In a red suit, I fly through the night.</li>
+        <li>Hung by the fire, I'm filled with delight. With candy and toys on Christmas night.</li>
+    </ol>
+    <input type="text" id="passphrase" placeholder="Enter passphrase">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="result"></div>
+    <div id="nextPuzzle" class="hidden">
+        <p>🎉 Congratulations! You solved it! <a href="puzzle2.html">Go to Puzzle 2</a></p>
+    </div>
+    <script>
+        function checkAnswer() {
+            const userInput = document.getElementById('passphrase').value.toUpperCase();
+            const result = document.getElementById('result');
+            const nextPuzzle = document.getElementById('nextPuzzle');
+            const correctPassphrase = "STARSNOWSANTASOCK";
+            if (userInput === correctPassphrase) {
+                result.textContent = "Correct! 🎉";
+                nextPuzzle.classList.remove("hidden");
+            } else {
+                result.textContent = "Incorrect passphrase. Try again!";
+                nextPuzzle.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

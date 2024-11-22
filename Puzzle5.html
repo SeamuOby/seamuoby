@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 5: Christmas Cryptogram</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cipher {
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puzzle 5: Christmas Cryptogram</h1>
+    <p>
+        Below is an encrypted message, encoded using a Vigenère cipher with a Christmas-themed keyword. 
+        Decode the message to find the answer. The keyword relates to something warm and cozy associated with Christmas!
+    </p>
+
+    <div class="cipher">UBYT PUY PV OYKXZYR ZNW RYKZHYW</div>
+    <p>Hint: Think about what keeps your toes warm during the holidays.</p>
+
+    <input type="text" id="answer" placeholder="Enter your decoded answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="hidden">🎉 Congratulations! <a href="puzzle6.html">Go to the next puzzle</a></div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "miss you sockheads"; // The new correct answer
+            const userInput = document.getElementById('answer').value.toLowerCase().trim();
+            const result = document.getElementById('result');
+
+            if (userInput === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

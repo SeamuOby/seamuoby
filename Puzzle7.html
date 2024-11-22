@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 7: Connect the Clues</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puzzle 7: Connect the Clues</h1>
+    <p>Below are 8 images. Each image represents a phonetic clue. Solve the puzzle by connecting the clues to form a complete phrase.</p>
+
+    <!-- Image Grid -->
+    <div class="image-container">
+        <img src="images/grin.webp">
+        <img src="images/inch.webp">
+        <img src="images/shoo.webp">
+        <img src="images/old.webp">
+        <img src="images/bee.webp">
+        <img src="images/inn.webp">
+        <img src="images/prize.webp">
+        <img src="images/on.webp">
+    </div>
+
+    <p>Enter your answer:</p>
+    <input type="text" id="answer" placeholder="Enter your phrase">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="hidden">🎉 Congratulations! <a href="puzzle8.html">Go to the next puzzle</a></div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "grinch should be in prison"; // Correct answer
+            const userInput = document.getElementById('answer').value.toLowerCase().trim();
+            const result = document.getElementById('result');
+
+            if (userInput === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

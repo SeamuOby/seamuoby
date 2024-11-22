@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 3: Ale’s Alegory</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .story {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puzzle 3: Ale’s Alegory</h1>
+    <p>
+        Hidden within the story below is a secret message. Read carefully and find the answer. When you think you’ve solved it, enter your answer in the box below.
+    </p>
+
+    <div>
+        <p>Once upon a time, in a quiet villaGe nestled between rolLing hills, there lived a man named Brewster. Brewster was a hUmble miller by trade, known for his love of crafTing fine alE. His evenings were spent by the hearth, sipping his brew aNd contemplating the mysteries of the world.</p>
+        <p>One day, while working in his mill, Brewster noticed a peculiar change. His once-strong hands grew weary, his thoughts became Foggy, and his steps felt heavieR as if laden with invisible wEights. "Surely, it is the toil of my trade," he reasoned, dismissing the signs with a hEarty swig of his beloved beer.</p>
+        <p>The villagers began to whisper. "Poor Brewster," they murmured, "he works too hard and rests too little." But an elder named Margery saw more than weary muscles. She approached Brewster one evening with a loaF of her fresh-baked bread and a curious gleam in her eye. "It’s not the work, lad," she said gently. "It’s what yOu’re putting into youR millstone."</p>
+        <p>Brewster scoffed. "My grains are pure! My brews are golden! What else could a man need?" Yet Margery left him with a riddle: "Sometimes, the answer lies in the grAin itself."</p>
+        <p>That night, Brewster’s dreams were troubled. He saw fields of Barley twisting into knots and golden grains turning to stone. From the shadows emErged a voice, whispering, "You carry a weighT you do not need. Unbind yourself, and you will find your way."</p>
+        <p>When he awoke, Brewster resolved to seek the answer. He visited the healer, who suggested a curious experiment: to avoid the grains he so dearly loved. "IT sounds mad," Brewster said, "but what have I to lose?"</p>
+        <p>Days turned to weeks. Without barley, Brewster’s steps grew lighter, his mind clearer, and his strEngth returned. It was as if a veil had been lifted. Yet the absence of his beloved ale left a hole in his heart—oR so he thought.</p>
+        <p>Determined to reclaim his craft, Brewster ventured to experiment. He explored new grains, creating brews from Millet and sorghum, buckwheat and rice. At first, the villagers laughed. "What kind of ale is this?" they tEased. But when they tasted it, their laughter turned to astonished delight.</p>
+        <p>Over time, Brewster’s creations became the talk of the land. He found joy not only in his craft but also in the realization that he had cast off the burden of the past. "The old ways are not the only ways," he declared one evening, raising a glass of his new brew to the stars. "To change is not to lose—it is to grow."</p>
+    </div>
+
+    <p>Enter the hidden message:</p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="hidden">🎉 Congratulations! <a href="puzzle4.html">Go to the next puzzle</a></div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "glutenfreeforabetterme"; // The correct answer
+            const userInput = document.getElementById('answer').value.toLowerCase().trim();
+            const result = document.getElementById('result');
+
+            if (userInput === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

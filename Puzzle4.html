@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Elf for an Elf makes the whole world kind</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>An Elf for an Elf makes the whole world kind</h1>
+    <p>What actor is least known for the following quote 'An elf an elf my kingdom for an elf'? If you're not sure of the answer, maybe ask Amy or Olivia!</p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="result"></div>
+    <p id="nextPuzzle" class="hidden">
+        🎉 Congratulations! <a href="puzzle5.html">Go to Puzzle 5</a>
+    </p>
+
+    <script>
+        function checkAnswer() {
+            const userInput = document.getElementById('answer').value.toLowerCase();
+            const result = document.getElementById('result');
+            const nextPuzzle = document.getElementById('nextPuzzle');
+            const correctAnswer = "al pacino";
+
+            if (userInput === correctAnswer) {
+                result.textContent = "Correct! 🎉";
+                nextPuzzle.classList.remove("hidden");
+            } else {
+                result.textContent = "Incorrect answer. Try again!";
+                nextPuzzle.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
