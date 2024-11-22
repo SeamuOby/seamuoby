@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 10: Cryptic Recipe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Puzzle 10: Cryptic Recipe</h1>
+    <p>Decode the recipe below to discover the hidden phrase. Once you've figured it out, enter the answer to proceed to the next puzzle!</p>
+    
+    <ul>
+        <li>10 oz butter</li>
+        <li>9 tbsp sugar</li>
+        <li>14 crushed candy canes</li>
+        <li>7 cups flour</li>
+        <li>12 sprinkles nutmeg</li>
+        <li>2 eggs</li>
+        <li>1 cup milk</li>
+        <li>Bake at 1212°F for 19 minutes</li>
+    </ul>
+
+    <p>Enter the hidden phrase:</p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="hidden">🎉 Congratulations! <a href="puzzle11.html">Go to the next puzzle</a></div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "jingle balls"; // The correct answer
+            const userInput = document.getElementById('answer').value.toLowerCase().trim();
+            const result = document.getElementById('result');
+
+            if (userInput === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

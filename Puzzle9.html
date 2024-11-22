@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 9: As a Large Language Model Developed by OpenAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Puzzle 9: As a Large Language Model Developed by OpenAI</h1>
+    <p>Below are four images, each symbolizing a banned topic. Your task is to identify the banned topic depicted in each image. Enter your answers below each image. Once all answers are correct, the next puzzle will be revealed!</p>
+
+    <!-- Puzzle 1: Biological Weapons -->
+    <div class="puzzle-container">
+        <img src= "Images/Fallout.webp">
+        <p>What banned topic does this image represent?</p>
+        <input type="text" id="answer1" placeholder="Your answer">
+    </div>
+
+    <!-- Puzzle 2: Drones -->
+    <div class="puzzle-container">
+        <img src="Images/Buzz.webp">
+        <p>What banned topic does this image represent?</p>
+        <input type="text" id="answer2" placeholder="Your answer">
+    </div>
+
+    <!-- Puzzle 3: Hacking -->
+    <div class="puzzle-container">
+        <img src="Images/Type.webp">
+        <p>What banned topic does this image represent?</p>
+        <input type="text" id="answer3" placeholder="Your answer">
+    </div>
+
+    <!-- Puzzle 4: Bestiality -->
+    <div class="puzzle-container">
+        <img src="Images/Deer.webp">
+        <p>What banned topic does this image represent?</p>
+        <input type="text" id="answer4" placeholder="Your answer">
+    </div>
+
+    <!-- Submit Button -->
+    <button onclick="checkAnswers()">Submit</button>
+    <p id="result" class="hidden">🎉 Congratulations! <a href="puzzle10.html">Go to the next puzzle</a></p>
+
+    <script>
+        function checkAnswers() {
+            // Correct answers
+            const correctAnswers = [
+                "biological weapons",
+                "drones",
+                "hacking",
+                "bestiality"
+            ];
+
+            // Get user inputs
+            const userAnswers = [
+                document.getElementById('answer1').value.toLowerCase().trim(),
+                document.getElementById('answer2').value.toLowerCase().trim(),
+                document.getElementById('answer3').value.toLowerCase().trim(),
+                document.getElementById('answer4').value.toLowerCase().trim()
+            ];
+
+            // Compare answers
+            const allCorrect = userAnswers.every((answer, index) => answer === correctAnswers[index]);
+
+            // Display result
+            const result = document.getElementById('result');
+            if (allCorrect) {
+                result.classList.remove('hidden');
+            } else {
+                alert("One or more answers are incorrect. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>

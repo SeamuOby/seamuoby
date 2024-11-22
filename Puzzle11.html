@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 11: Dwarf Fortress Holidays</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Puzzle 11: Dwarf Fortress Holidays</h1>
+    <p>
+        The dwarves are celebrating the holidays in their fortress, but they’ve written their greetings in a cryptic style. 
+        Can you figure out the hidden phrase that connects *Dwarf Fortress*, *The Lord of the Rings*, and the festive season?
+    </p>
+
+    <p>Enter the hidden phrase:</p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <button onclick="showHint()">Hint</button>
+
+    <div id="hint" class="hidden" style="margin-top: 20px;">It's a bad Lord of the Rings pun.</div>
+    <div id="result" class="hidden" style="margin-top: 20px;">🎉 Congratulations! <a href="puzzle12.html">Go to the next puzzle</a></div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "moria christmas"; // The correct answer
+            const userInput = document.getElementById('answer').value.toLowerCase().trim();
+            const result = document.getElementById('result');
+
+            if (userInput === correctAnswer) {
+                result.classList.remove('hidden');
+            } else {
+                alert("Incorrect answer. Try again!");
+            }
+        }
+
+        function showHint() {
+            const hint = document.getElementById('hint');
+            hint.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
