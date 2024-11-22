@@ -55,12 +55,24 @@
             margin: 20px auto;
             line-height: 1.6;
         }
+        }
+        #agent-container {
+            margin: 40px auto;
+            width: 100%;
+            max-width: 600px;
+        }
     </style>
 </head>
 <body>
     <h1>ChatGPT Saves Friendsmas</h1>
-    <p>Welcome to the Friendsmas adventure! To recieve your 'prize' you need to pass the 12 AI Slop challenges of Christmas. Solve the puzzles, crack the codes, and save the holiday season. Remember, I suck at this, so you can always just inspect the page source to find the answer.</p>
+    <p>Welcome to the Friendsmas adventure! To recieve your 'prize' you need to pass the 12 AI Slop challenges of Christmas. Solve the puzzles, crack the codes, and save the holiday season. Remember, I suck at this, so you can always just inspect the page source to find the answer. Also because I'm bad at this you need to be quite precise with the answers.</p>
     <p>Click the link below to begin your journey with Puzzle 1:</p>
     <a href="./puzzle1.html">Go to Puzzle 1</a>
+        <div class="widget-container"></p>
+    <div id="agent-container">
+        <!-- Embedded 11 Labs Agent -->
+        <elevenlabs-convai agent-id="uIYvHlEWm9gha5f1w4HA"></elevenlabs-convai>
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    </div>
 </body>
 </html>
