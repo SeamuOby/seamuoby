@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large Language Mutation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff0000; /* Red text for consistency */
+            border: 1px solid #ff0000;
+            cursor: pointer;
+            background-color: #000; /* Black background */
+        }
+        td.selected {
+            background-color: #ff0000;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Large Language Mutation</h1>
+    <p>Find the hidden Christmas-themed words in this word search. Once you've found the bonus message, enter it below:</p>
+    <table>
+        <!-- Example grid (feel free to customize with more words) -->
+        <tr>
+            <td>M</td><td>E</td><td>R</td><td>R</td><td>Y</td><td>E</td><td>L</td><td>F</td>
+        </tr>
+        <tr>
+            <td>X</td><td>M</td><td>E</td><td>N</td><td>A</td><td>S</td><td>T</td><td>A</td>
+        </tr>
+        <tr>
+            <td>S</td><td>A</td><td>N</td><td>T</td><td>A</td><td>S</td><td>O</td><td>C</td>
+        </tr>
+        <tr>
+            <td>O</td><td>C</td><td>K</td><td>S</td><td>R</td><td>E</td><td>E</td><td>S</td>
+        </tr>
+        <tr>
+            <td>N</td><td>I</td><td>C</td><td>E</td><td>S</td><td>L</td><td>A</td><td>B</td>
+        </tr>
+        <tr>
+            <td>J</td><td>I</td><td>N</td><td>G</td><td>L</td><td>E</td><td>F</td><td>A</td>
+        </tr>
+        <tr>
+            <td>B</td><td>A</td><td>L</td><td>L</td><td>S</td><td>M</td><td>A</td><td>S</td>
+        </tr>
+        <tr>
+            <td>C</td><td>H</td><td>E</td><td>E</td><td>R</td><td>L</td><td>E</td><td>D</td>
+        </tr>
+    </table>
+    <p>Enter the hidden bonus message:</p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result" class="result"></div>
+    <p id="nextPuzzle" class="hidden">
+        🎉 Congratulations! <a href="puzzle3.html">Go to Puzzle 3</a>
+    </p>
+
+    <script>
+        function checkAnswer() {
+            const userInput = document.getElementById('answer').value.toLowerCase();
+            const result = document.getElementById('result');
+            const nextPuzzle = document.getElementById('nextPuzzle');
+            
+            // Correct answer
+            const correctAnswer = "merry x menmas";
+
+            if (userInput === correctAnswer) {
+                result.textContent = "Correct! 🎉";
+                result.style.color = "green";
+                nextPuzzle.classList.remove("hidden");
+            } else {
+                result.textContent = "Incorrect answer. Try again!";
+                result.style.color = "red";
+                nextPuzzle.classList.add("hidden");
+            }
+        }
+
+        // Optional: Add interactive selection of table cells (e.g., for highlighting words)
+        const cells = document.querySelectorAll("td");
+        cells.forEach(cell => {
+            cell.addEventListener("click", () => {
+                cell.classList.toggle("selected");
+            });
+        });
+    </script>
+</body>
+</html>
