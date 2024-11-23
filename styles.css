@@ -124,3 +124,15 @@ a:hover {
   margin-right: auto;
   width: 50%;
 }
+
+.hidden {
+    display: none; /* Ensures elements with this class are not visible */
+}
+
+.result {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+
