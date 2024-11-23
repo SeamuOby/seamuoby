@@ -136,3 +136,40 @@ a:hover {
     color: green;
 }
 
+.tile {
+    width: 40px;
+    height: 40px;
+    background: #8b0000;
+    border: 2px solid #ffffff;
+    font-size: 1.2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.tile.revealed {
+    background: #006400;
+    color: #ffdf00;
+}
+
+.tile.mine {
+    background: #1e90ff;
+    color: #fff;
+}
+
+#resetButton {
+    background: #ffdf00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #004d00;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#resetButton:hover {
+    background: #ffe066;
+}
