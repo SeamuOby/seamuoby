@@ -1,11 +1,26 @@
 /* General Styles */
 body {
     font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(to bottom, #ffefd5, #ffccb6);
+    background: linear-gradient(120deg, #ff9a8b, #ff6a88, #ff99ac);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
     color: #2c2c2c;
-    text-align: center;
-    margin: 30;
-    padding: 10;
+    margin: 0;
+    padding: 20px; /* Add padding to ensure text doesn't stick to the edges */
+    box-sizing: border-box;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1, h2 {
@@ -13,16 +28,17 @@ h1, h2 {
     color: #e63946;
     text-align: center;
     text-shadow: 2px 2px 0px #f1faee, 4px 4px 5px #457b9d;
+    margin: 20px auto; /* Ensure text is spaced properly */
 }
 
 h1 {
     font-size: 2.5rem;
-    margin: 20px 0;
+    margin-top: 30px;
 }
 
 h2 {
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 /* Retro Christmas Grid */
