@@ -1,77 +1,102 @@
-<style>
-    /* Reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to bottom, #ffefd5, #ffccb6);
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+}
 
-    /* Body styling */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #000; /* Ensure black background */
-        color: #ff0000; /* Red text */
-        text-align: center;
-        padding: 20px;
-    }
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #e63946;
+    text-align: center;
+    text-shadow: 2px 2px 0px #f1faee, 4px 4px 5px #457b9d;
+}
 
-    /* Text input fields */
-    input[type="text"], input[type="number"] {
-        padding: 10px;
-        font-size: 16px;
-        width: 300px;
-        margin: 10px 0;
-        text-align: center;
-        border: 2px solid #ff0000;
-        background-color: #000; /* Black input field */
-        color: #ff0000; /* Red text */
-    }
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
 
-    /* Buttons */
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 10px;
-        cursor: pointer;
-        background-color: #ff0000; /* Red background */
-        color: #000; /* Black text */
-        border: none;
-        text-transform: uppercase;
-    }
+h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
 
-    button:hover {
-        background-color: #000; /* Black on hover */
-        color: #ff0000; /* Red text */
-        border: 2px solid #ff0000; /* Red border */
-    }
+/* Retro Christmas Grid */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 4px double #6a994e;
+    background: #fff8e1;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-    /* Links */
-    a {
-        color: #ff0000;
-        text-decoration: none;
-        font-weight: bold;
-    }
+td {
+    border: 2px dashed #bc4749;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #023e8a;
+}
 
-    a:hover {
-        text-decoration: underline;
-    }
+/* Retro Buttons */
+button {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to bottom, #e63946, #bc4749);
+    color: white;
+    border: 3px solid #457b9d;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px #2a9d8f;
+}
 
-    /* Result text */
-    .result {
-        font-size: 18px;
-        margin-top: 20px;
-        font-weight: bold;
-    }
+button:hover {
+    background: #457b9d;
+    color: #f1faee;
+    border-color: #e63946;
+}
 
-    /* Heading styling */
-    h1 {
-        font-size: 32px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-    }
+/* Inputs */
+input[type="text"] {
+    padding: 12px;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid #6a994e;
+    border-radius: 8px;
+    width: 320px;
+    background-color: #fff8e1;
+    color: #2c2c2c;
+    text-align: center;
+}
 
-    /* Hidden elements */
-    .hidden {
-        display: none;
-    }
-</style>
+/* Animations for Christmas Cheer */
+h1::after {
+    content: '🎄';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Links */
+a {
+    color: #e63946;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #e63946;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #457b9d;
+    border-bottom-color: #457b9d;
+}
