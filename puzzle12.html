@@ -3,97 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle 2: Large Language Mutation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        table {
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
-        td {
-            border: 1px solid #000;
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .answer-box {
-            display: flex;
-            justify-content: center;
-            margin: 20px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            width: 300px;
-            margin-right: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .message {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 20px;
-            color: green;
-        }
-    </style>
+    <title>Large Language Mutation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Puzzle 2: Large Language Mutation</h1>
-    <h2>Find the hidden message in the grid and uncover the secret!</h2>
+    <h1>🎄 Christmas Minesweeper 🎅</h1>
+    <p id="instructions">Uncover all the tiles without hitting a snowflake! ❄️</p>
+    <div id="minesweeper"></div>
+    <button id="resetButton">🎁 Restart</button>
 
-    <!-- Custom grid -->
-    <table>
-        <tr>
-            <td>S</td><td>S</td><td>E</td><td>X</td><td>A</td>
-        </tr>
-        <tr>
-            <td>E</td><td>N</td><td>Y</td><td>X</td><td>T</td>
-        </tr>
-        <tr>
-            <td>V</td><td>M</td><td>O</td><td>E</td><td>N</td>
-        </tr>
-        <tr>
-            <td>L</td><td>N</td><td>A</td><td>W</td><td>A</td>
-        </tr>
-        <tr>
-            <td>E</td><td>S</td><td>Q</td><td>F</td><td>S</td>
-        </tr>
-    </table>
-
-    <div class="answer-box">
-        <input type="text" id="answer" placeholder="Enter the hidden message">
-        <button onclick="checkAnswer()">Submit</button>
-    </div>
-    <div class="message" id="message"></div>
     <script>
-        function checkAnswer() {
-            const userAnswer = document.getElementById("answer").value.toUpperCase();
-            const correctAnswer = "MERRY X MEN";
-            const messageElement = document.getElementById("message");
-            if (userAnswer === correctAnswer) {
-                messageElement.textContent = "Correct! You've solved the puzzle!";
-            } else {
-                messageElement.textContent = "Try again! Look for the hidden message.";
+        // JavaScript code goes here
+        const gridSize = 10;
+        const mineCount = 15;
+
+        const grid = document.getElementById('minesweeper');
+        const resetButton = document.getElementById('resetButton');
+
+        let tiles = [];
+        let mineLocations = [];
+
+        function createGrid() {
+            grid.innerHTML = '';
+            grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+            grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+            tiles = [];
+            mineLocations = [];
+
+            for (let i = 0; i < gridSize * gridSize; i++) {
+                const tile = document.createElement('div');
+                tile.classList.add('tile');
+                tile.dataset.index = i;
+                tile.addEventListener('click', () => revealTile(i));
+                grid.appendChild(tile);
+                tiles.push(tile);
+            }
+
+            placeMines();
+        }
+
+        function placeMines() {
+            while (mineLocations.length < mineCount) {
+                const mineIndex = Math.floor(Math.random() * gridSize * gridSize);
+                if (!mineLocations.includes(mineIndex)) {
+                    mineLocations.push(mineIndex);
+                }
             }
         }
+
+        function revealTile(index) {
+            const tile = tiles[index];
+            if (tile.classList.contains('revealed')) return;
+
+            tile.classList.add('revealed');
+            if (mineLocations.includes(index)) {
+                tile.classList.add('mine');
+                tile.textContent = '❄️';
+                alert('Oh no! You hit a snowflake! 🎅');
+                resetGame();
+            } else {
+                const adjacentMines = countAdjacentMines(index);
+                tile.textContent = adjacentMines > 0 ? adjacentMines : '';
+            }
+        }
+
+        function countAdjacentMines(index) {
+            const row = Math.floor(index / gridSize);
+            const col = index % gridSize;
+
+            let mineCount = 0;
+            for (let r = -1; r <= 1; r++) {
+                for (let c = -1; c <= 1; c++) {
+                    const neighborRow = row + r;
+                    const neighborCol = col + c;
+                    if (
+                        neighborRow >= 0 &&
+                        neighborRow < gridSize &&
+                        neighborCol >= 0 &&
+                        neighborCol < gridSize
+                    ) {
+                        const neighborIndex = neighborRow * gridSize + neighborCol;
+                        if (mineLocations.includes(neighborIndex)) {
+                            mineCount++;
+                        }
+                    }
+                }
+            }
+            return mineCount;
+        }
+
+        function resetGame() {
+            createGrid();
+        }
+
+        resetButton.addEventListener('click', resetGame);
+        createGrid();
     </script>
 </body>
 </html>
