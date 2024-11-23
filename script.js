@@ -196,8 +196,8 @@ function winGame() {
     clearInterval(gameInterval);
     const winMessage = document.createElement("div");
     winMessage.innerHTML = `
-        <h2 style="color: yellow; text-align: center; font-size: 2rem;">🎉 You Won! 🎉</h2>
-        <a href="nextpage.html" style="display: block; text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Proceed to the Next Challenge</a>
+        <h2 style="color: yellow; text-align: center; font-size: 2rem;">🎉 You Won! This didn't even count as a puzzle! 🎉</h2>
+        <a href="puzzle3.html" style="display: block; text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Proceed to the Next Challenge</a>
     `;
     gameArea.appendChild(winMessage);
 }
