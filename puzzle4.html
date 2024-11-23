@@ -15,7 +15,11 @@
     <p id="nextPuzzle" class="hidden">
         🎉 Congratulations! <a href="puzzle5.html">Go to Puzzle 5</a>
     </p>
-
+    <div id="agent-container">
+        <!-- Embedded 11 Labs Agent -->
+        <elevenlabs-convai agent-id="S1MKPuseJnO6XHLQruio"></elevenlabs-convai>
+        <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    </div>
     <script>
         function checkAnswer() {
             const userInput = document.getElementById('answer').value.toLowerCase();
