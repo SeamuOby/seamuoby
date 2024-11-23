@@ -4,44 +4,34 @@ let playerPosition = gameArea.offsetWidth / 2 - player.offsetWidth / 2;
 let bullets = [];
 let invaders = [];
 let invaderBullets = [];
-let invaderSpeed = 4;
+let invaderSpeed = 4; // Updated speed for invaders
 let gameInterval;
-let playerLives = 1;
+let playerLives = 2;
+
+// Mobile controls
+const leftButton = document.getElementById("leftButton");
+const rightButton = document.getElementById("rightButton");
+const shootButton = document.getElementById("shootButton");
 
 // Set initial player position
 player.style.left = `${playerPosition}px`;
 
 // Cooldown timer
 let lastFireTime = 0; // Time when the player last fired
-const fireCooldown = 2200; // 8 seconds in milliseconds
+const fireCooldown = 2800; // Updated cooldown: 2800ms
 
-// Move Player
-document.addEventListener("keydown", (e) => {
+// Player Movement
+function movePlayer(direction) {
     const step = 10;
-    if (e.key === "ArrowLeft" && playerPosition > 0) {
+    if (direction === "left" && playerPosition > 0) {
         playerPosition -= step;
-    } else if (e.key === "ArrowRight" && playerPosition < gameArea.offsetWidth - player.offsetWidth) {
+    } else if (direction === "right" && playerPosition < gameArea.offsetWidth - player.offsetWidth) {
         playerPosition += step;
     }
     player.style.left = `${playerPosition}px`;
-});
-
-// Shoot Bullet
-document.addEventListener("keydown", (e) => {
-    if (e.key === " " && canFire()) {
-        shootBullet();
-    }
-});
-
-function canFire() {
-    const currentTime = Date.now(); // Get the current time in milliseconds
-    if (currentTime - lastFireTime >= fireCooldown) {
-        lastFireTime = currentTime; // Update the last fire time
-        return true;
-    }
-    return false;
 }
 
+// Shooting Bullets
 function shootBullet() {
     const bullet = document.createElement("div");
     bullet.classList.add("bullet");
@@ -51,6 +41,26 @@ function shootBullet() {
     bullets.push(bullet);
 }
 
+// Add Event Listeners for Buttons
+leftButton.addEventListener("click", () => movePlayer("left"));
+rightButton.addEventListener("click", () => movePlayer("right"));
+shootButton.addEventListener("click", () => {
+    if (canFire()) {
+        shootBullet();
+    }
+});
+
+// Cooldown Checker
+function canFire() {
+    const currentTime = Date.now(); // Get the current time in milliseconds
+    if (currentTime - lastFireTime >= fireCooldown) {
+        lastFireTime = currentTime; // Update the last fire time
+        return true;
+    }
+    return false;
+}
+
+// Create Invaders
 function createInvaders() {
     const rows = 3; // Number of rows
     const columns = 6; // Number of invaders per row
@@ -73,7 +83,6 @@ function createInvaders() {
         }
     }
 }
-
 
 // Move Invaders
 function moveInvaders() {
@@ -196,7 +205,7 @@ function winGame() {
     clearInterval(gameInterval);
     const winMessage = document.createElement("div");
     winMessage.innerHTML = `
-        <h2 style="color: yellow; text-align: center; font-size: 2rem;">🎉 You Won! This didn't even count as a puzzle! 🎉</h2>
+        <h2 style="color: yellow; text-align: center; font-size: 2rem;">🎉 You Won! 🎉</h2>
         <a href="puzzle3.html" style="display: block; text-align: center; color: white; font-size: 1.5rem; margin-top: 20px;">Proceed to the Next Challenge</a>
     `;
     gameArea.appendChild(winMessage);
