@@ -117,3 +117,10 @@ a:hover {
     color: #457b9d;
     border-bottom-color: #457b9d;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
